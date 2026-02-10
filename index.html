@@ -1,54 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JDMH Prints</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-<header>
-  <h1>JDMH Prints</h1>
-  <p>Custom 3D Printing & Prototyping</p>
-</header>
-
-<section>
-  <h2>Select a Model</h2>
-
-  <div class="models">
-    <label><input type="radio" name="model" value="Model A"> Model A</label>
-    <label><input type="radio" name="model" value="Model B"> Model B</label>
-    <label><input type="radio" name="model" value="Model C"> Model C</label>
-    <label><input type="radio" name="model" value="Model D"> Model D</label>
-    <label><input type="radio" name="model" value="Model E"> Model E</label>
-  </div>
-</section>
-
 <section id="orderSection" class="disabled">
   <h2>Order Details</h2>
 
-  <label>
-    Quantity:
-    <input type="number" id="quantity" min="1" value="1" disabled>
-  </label>
+  <form action="https://formspree.io/f/mjgekzyb" method="POST">
+    <input type="hidden" name="model" id="selectedModel">
 
-  <label>
-    Notes:
-    <textarea id="notes" placeholder="Color, size, special requests..." disabled></textarea>
-  </label>
+    <label>
+      Quantity:
+      <input type="number" name="quantity" id="quantity" min="1" value="1" disabled required>
+    </label>
 
-  <button id="orderBtn" disabled>Place Order</button>
+    <label>
+      Notes:
+      <textarea name="notes" id="notes" placeholder="Color, size, special requests..." disabled></textarea>
+    </label>
+
+    <button type="submit" id="orderBtn" disabled>
+      Submit Order
+    </button>
+  </form>
 </section>
-
-<section>
-  <h2>Contact</h2>
-  <p>
-    Email:
-    <a href="mailto:jdmhprints@gmail.com">jdmhprints@gmail.com</a>
-  </p>
-</section>
-
-<script src="script.js"></script>
-</body>
-</html>
